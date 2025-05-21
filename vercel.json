@@ -1,18 +1,18 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
+    { "source": "/api/(.*)", "destination": "/api/index.js" }
+  ],
+  "redirects": [
+    { "source": "/old-page", "destination": "/new-page", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Custom-Header", "value": "my value" }
+      ]
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
 }
