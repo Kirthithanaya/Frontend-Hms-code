@@ -16,7 +16,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const { token, user } = await loginUser(formData); // ✅ call service
+      const { token, user } = await loginUser(formData); 
 
       localStorage.setItem('token', token);
       localStorage.setItem('user', JSON.stringify(user));
@@ -83,7 +83,7 @@ const Login = () => {
         </p>
 
         <p className="text-sm text-center">
-          Don’t have an account?{' '}
+          Don't have an account?{' '}
           <Link to="/register" className="text-blue-600 hover:underline">
             Register
           </Link>
